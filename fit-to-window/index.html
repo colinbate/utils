@@ -13,6 +13,8 @@
 		</header>
 		<section class="container">
 			<p>This bookmarklet can be used to resize an image (usually one which is too big) to fit the width of your browser window.</p>
+			<p>If the page has only one image, it will resize that one (including if you have opened an image directly in the browser). If there are multiple images, you need to click on the one you want to resize after clicking the bookmarklet.</p>
+			<p>At the moment only tested on Chrome.</p>
 			<p>
 				<a class="button" href="javascript:(function(){function%20callback(){(function(j){var%20i=j('img'),f=function(e){e.css({width:'100%25',height:'auto'})};if(i.length===1){f(i)}else%20if(i.length>1){j('body').one('click','img',function(e){f(j(e.target))})}})(jQuery.noConflict(true))}var%20s=document.createElement('script');s.src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js';if(s.addEventListener){s.addEventListener('load',callback,false)}else%20if(s.readyState){s.onreadystatechange=callback}document.body.appendChild(s)}())">Fit to Window</a> &larr; Drag this to your bookmarks
 			</p>
