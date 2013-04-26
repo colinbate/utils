@@ -587,13 +587,18 @@ a.button:hover,
 button:hover {
   text-decoration: underline;
 }
+a.button:hover,
+button:hover {
+  background-color: #4a8c60;
+  text-decoration: none;
+}
 button::-moz-focus-inner {
   border: none;
   /* overrides extra padding in Firefox */
 
 }
 button:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 a.button.secondary,
 button.secondary,

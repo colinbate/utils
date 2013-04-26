@@ -70,7 +70,10 @@
 @link-active-color:     #9843d9;
 
 @brand-green:			#6dd08e;
+@brand-green-darker:	#4a8c60;
 @header-color:			lighten(@brand-green, 20%);
+@button-color:			@brand-green;
+@button-active-color:	@brand-green-darker;
 
 /**
     => Document Elements
@@ -295,7 +298,7 @@ input[type="checkbox"] { vertical-align: middle; *vertical-align: baseline; }
 
 .button () {
     .button-common();
-    background-color: @brand-green;
+    background-color: @button-color;
     border: 0;
     color:#fff;
     padding: 10px 30px;
@@ -318,13 +321,17 @@ input[type="checkbox"] { vertical-align: middle; *vertical-align: baseline; }
 a.button,
 button { 
 	.button();
+	&:hover {
+		background-color: @button-active-color;
+		text-decoration: none;
+	}
 }
 button::-moz-focus-inner {
 	border: none;  /* overrides extra padding in Firefox */
 }
 
 button:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 	
 a.button.secondary,
