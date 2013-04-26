@@ -1,0 +1,350 @@
+/*
+    brand.css
+    =================================
+    These styles are used to set basic elements to fit to a brand.
+    It should be able to be added to a page no matter what the media type 
+    to set the brand.
+    It must not contain layout styles [ie margins,position,padding,display]. 
+    It would be used for: colors, text, fonts
+    It should not contain ids, only elements and classes
+    
+    - Document Elements
+    - links
+    - paragraphs 
+    - headers 
+    - lists 
+    - tables
+    - forms 
+
+*/
+
+/**
+	=> Colors
+
+	__________________________
+	Base & Background
+	--------------------------
+	#F7F7F5 (light grey)
+	#E6E6E4 (medium grey)
+	#C2C2C2 (dark grey)
+	
+	__________________________
+	Brand main colour
+	--------------------------
+	#BFBAB6 (light stone)
+	#99908A (medium stone)
+	#66625C (dark stone)
+	
+	__________________________
+	Brand complementary colour
+	--------------------------
+	#00C0F3 (light blue)
+	#008CBF (medium blue)
+	#00598C (dark blue)
+	#DBE129 (light yellowgreen)
+	#A7AD00 (medium yellowgreen)
+	#747A00 (dark yellowgreen)
+	
+	__________________________
+	Alternative highlights
+	--------------------------
+	#9843D9 (purple)
+	#6DD08E (green/turquoise)
+	#0054A6 (navy)
+	#EC008C (pink)
+	
+	__________________________
+	Status & Alerts
+	--------------------------
+	#EE1C24 (red)
+	#FF8517 (orange)
+	#39B54A (green)
+
+--------------------------------------------------*/
+
+
+@font-heading: "Abel", sans-serif;
+@font-text: "Fenix", Georgia, serif;
+
+@link-color:            #9843d9;
+@link-active-color:     #9843d9;
+
+@brand-green:			#6dd08e;
+@header-color:			lighten(@brand-green, 20%);
+
+/**
+    => Document Elements
+--------------------------------------------------*/
+/* always force a scrollbar in non-IE */
+
+/* set global font family */
+body, select, input, textarea {
+	font-family: @font-text;
+}
+
+body {
+    font-size: 20px;
+	line-height: 1.666666;
+	color: #66625c;
+}
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+/* webkit browsers add a 2px margin outside the chrome of form elements */ 
+button, input, select, textarea { margin: 0; }
+
+/* make buttons play nice in IE:   
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/**
+    => links
+--------------------------------------------------*/
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a					{ outline: none; }
+a:focus             { outline: thin dotted; }
+a:active, a:hover	{ outline: none; }
+
+a					{ color:@link-color; text-decoration: underline;}
+a:visited			{ color:@link-color; }
+a:hover, a:active	{ color:@link-active-color; text-decoration: underline; }
+a:focus				{ }
+a img				{ border: none; }
+a:link				{ -webkit-tap-highlight-color: #6DD08E; }
+
+nav a,
+nav a:visited		{ color: #66625c; text-decoration: none; }
+nav a:hover			{ color: #66625c; text-decoration: underline; }
+
+/* bicubic resizing for non-native sized IMG: 
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+img { -ms-interpolation-mode: bicubic; display: inline; }
+
+pre { 
+  padding: 16px; 
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+em              { font-weight: normal; }
+small           { font-size: 62.5%; }
+
+/* normalize monospace sizing 
+ * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+ */
+pre, code, 
+kbd, samp       { font-family: monospace, sans-serif; }
+
+b, strong {
+	font-weight: normal;
+	color: #004;
+}
+
+/* 
+    => headers 
+----------------------------------------------------*/
+/* www.aestheticallyloyal.com/public/optimize-legibility/ */ 
+h1,h2,h3,h4,h5,h6   {
+	font-weight: bold;
+	text-rendering: optimizeLegibility;
+	font-family: @font-heading;
+	line-height: 1;
+	text-transform: uppercase;
+}
+h1 {
+	font-size: 50px;
+	margin-bottom: 0.1em;
+} 
+h2 {
+	font-size: 40px;
+	margin-bottom: 0.518em; /*27px/14*/
+}
+h3 {
+	font-size: 30px;
+}
+
+/* Footer
+----------------------------------------------------*/
+
+footer,
+footer p,
+footer li,
+footer a {
+	font-family: @font-text;
+	color: #99908a;
+}
+
+/* 
+    => paragraphs 
+----------------------------------------------------*/
+p {
+	margin-bottom: 1.143em;
+	font-family: @font-text;
+}
+h1 + p {
+	font-size: 1.286em;
+}
+
+/* 
+    => lists 
+----------------------------------------------------*/
+
+/*
+    DL Lists
+    Width needs to be explicitly set on the dd it the sum if the dt and th dd width is greater than the dl.
+    This is to ensure the content is restricted to it's container and the layout
+    does not break cross browser.
+*/
+dl              { padding: 0 0 16px;}
+dl:after        { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+dt              { clear: left; display: inline-block; float: left; font-weight: normal; }
+dd              { float:left; width:200px; *float:none;}
+
+
+li		{ font-family: @font-text; }
+ol		{ padding: 0 0 16px 23px; }
+ol ol           { padding-top: 0; }
+ul              { padding: 0 0 16px 20px;}
+ul ul           { padding-top: 0; }
+
+nav li { list-style: none; }
+
+/*
+ * Add this in if you want to use an image for the list items
+ul li           { list-style-type:none; list-style-image: url("/images/li-main.gif"); }
+ul li li        { list-style-image: none; list-style-type: circle; }
+ul li li li     { list-style-image: none; list-style-type: disc; }
+ul li li li li  { list-style-image: none; list-style-type: square; }
+*/
+
+/* when lists come straight after a paragraph */
+p+ul, p+ol      { padding-top: 0; }
+
+/* 
+    => tables
+----------------------------------------------------*/
+table {
+	font-size:inherit;
+	margin: 0.286em 0 0.5em;
+	width: 100%;
+}
+table caption {
+	background-color: #F7F7F5;
+	color: #99908A;
+	font-size: 1.1em;
+	font-weight: normal;
+	text-align: left;
+}
+table caption span {
+	display: block;
+	padding: 0.714em 0.714em 0.571em;
+	position: relative;
+}
+table caption .aside	{ position: absolute; top:0; right: 0; }
+th, td {
+	border: solid 1px #C2C2C2;
+	padding: 8px 3px 7px;
+	text-align: center;
+}
+th { font-weight: normal; }
+tr:nth-child(odd) td    { background: #E6E6E4; }
+.ie6 tr.odd td,
+.ie7 tr.odd td,
+.ie8 tr.odd td          { background: #E6E6E4; }
+	
+/* 
+    => forms 
+----------------------------------------------------*/
+button,select, input, textarea { font-size:99%; font-family: inherit; }
+
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button          {  width: auto; overflow: visible; }
+
+fieldset        {}
+input           { vertical-align: middle; }
+label           { vertical-align: middle; }
+legend          { } .ie6 legend, .ie7 legend { margin-left: -7px; }
+select          { padding: 4px 0; vertical-align: middle; }
+textarea	    { overflow: auto; vertical-align: 1px; }
+
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: middle; *vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+.button-common() {
+    cursor: pointer;
+    margin: 0;
+    border-radius: 3px;
+    font-family: @font-text;
+    outline: none;
+	zoom: 1;
+    position: relative;
+    text-decoration: none;
+    overflow: visible; /* removes extra side padding in IE */
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.button () {
+    .button-common();
+    background-color: @brand-green;
+    border: 0;
+    color:#fff;
+    padding: 10px 30px;
+    font-size: 18px;
+	vertical-align: middle;
+    display: inline-block;
+}
+
+.secondary-button () {
+    .button-common();
+    background-color: transparent;
+	border: 1px solid #e2dfdb;
+	color: #00c0f3;
+	padding: 5px 15px;
+	font-size: 13px;
+	vertical-align: baseline;
+	display: inline;
+}
+
+a.button,
+button { 
+	.button();
+}
+button::-moz-focus-inner {
+	border: none;  /* overrides extra padding in Firefox */
+}
+
+button:hover {
+	text-decoration: underline;
+}
+	
+a.button.secondary,
+button.secondary,
+a.button-secondary {
+	.secondary-button();
+}
+
+
+
+.btn {
+	font-size: 1.28em;
+	display: inline-block;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: "DINWeb-Cond", Arial, Helvetica, Sans-Serif; 
+	padding: 5px 13px 0;
+	border-radius: 5px;
+	height: 25px;
+	-webkit-box-shadow:  0px 0 1px 0px rgba(0, 0, 0, 0.1);        
+        	box-shadow:  0px 0 1px 0px rgba(0, 0, 0, 0.1);
+}
+
