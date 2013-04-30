@@ -648,6 +648,8 @@ a.button-secondary:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 header {
   padding: 2em 0;
