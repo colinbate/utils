@@ -257,7 +257,7 @@ body,
 select,
 input,
 textarea {
-  font-family: "Fenix", Georgia, serif;
+  font-family: "ff-tisa-web-pro", Georgia, serif;
 }
 body {
   font-size: 20px;
@@ -360,7 +360,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, sans-serif;
+  font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
 }
 b,
 strong {
@@ -378,7 +378,7 @@ h5,
 h6 {
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-family: "Abel", sans-serif;
+  font-family: "nimbus-sans-condensed", sans-serif;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -401,7 +401,7 @@ footer,
 footer p,
 footer li,
 footer a {
-  font-family: "Fenix", Georgia, serif;
+  font-family: "ff-tisa-web-pro", Georgia, serif;
   color: #99908a;
 }
 /* 
@@ -409,7 +409,7 @@ footer a {
 ----------------------------------------------------*/
 p {
   margin-bottom: 1.143em;
-  font-family: "Fenix", Georgia, serif;
+  font-family: "ff-tisa-web-pro", Georgia, serif;
 }
 h1 + p {
   font-size: 1.286em;
@@ -445,7 +445,7 @@ dd {
   *float: none;
 }
 li {
-  font-family: "Fenix", Georgia, serif;
+  font-family: "ff-tisa-web-pro", Georgia, serif;
 }
 ol {
   padding: 0 0 16px 23px;
@@ -567,7 +567,7 @@ button {
   cursor: pointer;
   margin: 0;
   border-radius: 3px;
-  font-family: "Fenix", Georgia, serif;
+  font-family: "ff-tisa-web-pro", Georgia, serif;
   outline: none;
   zoom: 1;
   position: relative;
@@ -606,7 +606,7 @@ a.button-secondary {
   cursor: pointer;
   margin: 0;
   border-radius: 3px;
-  font-family: "Fenix", Georgia, serif;
+  font-family: "ff-tisa-web-pro", Georgia, serif;
   outline: none;
   zoom: 1;
   position: relative;
@@ -657,4 +657,20 @@ header {
 }
 section {
   padding: 1em 0;
+}
+.cssify input[type=text] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.25em;
+}
+.cssify section {
+  text-align: center;
+}
+.cssify section #cssout,
+.cssify section input,
+.cssify section p {
+  text-align: left;
+  margin-bottom: 1em;
 }

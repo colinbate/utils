@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cssify</title>
+	<link href='../style/core.css' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://use.typekit.net/pln4nza.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body class="cssify">
+	<div id="main">
+		<header>
+			<h1 class="container">cssify Your XPath</h1>
+		</header>
+		<section class="container">
+			<p>Enter an xpath expression, and this tool will convert it to a CSS selector. This is particularly useful if you want to target some specific element in a badly designed path when you are creating user styles.</p>
+			<p>For example, if you are in the developer panel of Chrome, you can right click an element to Copy XPath.</p>
+			<p>The XPath for this paragraph is: <code>//*[@id="main"]/section/p[3]</code></p>
+			<input type="text" name="xpath" id="xpath" size="100">
+			<input type="button" name="convert" id="convert" value="Convert">
+			<div id="cssout"></div>
+		</section>
+	</div>
+	<script src="cssify.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

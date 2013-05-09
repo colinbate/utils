@@ -63,8 +63,9 @@
 --------------------------------------------------*/
 
 
-@font-heading: "Abel", sans-serif;
-@font-text: "Fenix", Georgia, serif;
+@font-heading: "nimbus-sans-condensed", sans-serif;
+@font-text: "ff-tisa-web-pro", Georgia, serif;
+@font-code: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
 
 @link-color:            #9843d9;
 @link-active-color:     #9843d9;
@@ -139,7 +140,7 @@ small           { font-size: 62.5%; }
  * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
  */
 pre, code, 
-kbd, samp       { font-family: monospace, sans-serif; }
+kbd, samp       { font-family: @font-code; }
 
 b, strong {
 	font-weight: normal;
