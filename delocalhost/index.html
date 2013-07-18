@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>De-localhost</title>
+	<link href='../style/core.css' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://use.typekit.net/pln4nza.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body class="cssify">
+	<div id="main">
+		<header>
+			<h1 class="container">De-localhost</h1>
+		</header>
+		<section class="container">
+			<p>Tired of replacing you machine name in URLs when you are copying a localhost URL for a colleague? Just enter you machine name once here, and use this bookmarklet to provide you with your fully resolvable URL.</p>
+			<p>Takes the current page's URL and replaces localhost with whatever you specify below.</p>
+			<input type="text" name="machineName" id="machineName" size="100" placeholder="Type your machine name here...">
+			<div id="bookmark" style="display: none;"><a class="button" href="">De-localhost</a> &larr; Drag this to your bookmarks</div>
+			<p id="exblock" style="display: none;">
+				Will replace:<br>
+				<code>http://localhost/my/fancy/url</code><br>
+				with<br>
+				<code>http://<span id="example"></span>/my/fancy/url</code>
+			</p>
+		</section>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="delocalhost.js"></script>
+</body>
+</html>
