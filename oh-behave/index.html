@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oh Behave!</title>
+	<link href='../style/core.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="main">
+		<header>
+			<h1 class="container">Oh Behave!</h1>
+		</header>
+		<section class="container">
+			<p>This bookmarklet uses <a href="http://jakiestfu.github.io/Behave.js/">Behave.js</a> to take an existing textarea on a page and make it <em>behave</em> like a code editor.</p>
+			<p>If the page has only one textarea, it will target that one. If there are multiple textareas, you need to click on the one you want to behave after clicking the bookmarklet.</p>
+			<p>At the moment only tested on Chrome, but should work in most modern browsers.</p>
+			<p>Since there are different people who like different tabbing configurations, I'm going to provide a couple of options. Perhaps in the future you will be able to completely customize the bookmarklet.</p>
+
+			<h2>Soft tabs, size 4</h2>
+			<p>
+				<a class="button" href="javascript:(function(d,s){function%20callback(){(function(b,t,f,h){t=d.getElementsByTagName('textarea');f=function(e){if(!e.isbehaving){new%20b({textarea:e,tabSize:4});e.style.fontFamily='monospace';e.isbehaving=true;e.spellcheck=false}};h=function(e){e.currentTarget.removeEventListener('click',h);e.target.tagName!=='TEXTAREA'||f(e.target)};if(t.length===1){f(t[0])}else%20if(t.length>1){d.body.addEventListener('click',h);alert('Multiple%20textareas,%20click%20one%20to%20behave')}})(Behave,document)}if(!window.Behave){s=d.createElement('script');s.src='http://jakiestfu.github.com/Behave.js/behave.js';if(s.addEventListener){s.addEventListener('load',callback,false)}else%20if(s.readyState){s.onreadystatechange=callback}d.body.appendChild(s)}else{callback()}}(document))">Oh Behave! (4)</a> &larr; Drag this to your bookmarks
+			</p>
+
+			<h2>Soft tabs, size 2</h2>
+			<p>
+				<a class="button" href="javascript:(function(d,s){function%20callback(){(function(b,t,f,h){t=d.getElementsByTagName('textarea');f=function(e){if(!e.isbehaving){new%20b({textarea:e,tabSize:2});e.style.fontFamily='monospace';e.isbehaving=true;e.spellcheck=false}};h=function(e){e.currentTarget.removeEventListener('click',h);e.target.tagName!=='TEXTAREA'||f(e.target)};if(t.length===1){f(t[0])}else%20if(t.length>1){d.body.addEventListener('click',h);alert('Multiple%20textareas,%20click%20one%20to%20behave')}})(Behave,document)}if(!window.Behave){s=d.createElement('script');s.src='http://jakiestfu.github.com/Behave.js/behave.js';if(s.addEventListener){s.addEventListener('load',callback,false)}else%20if(s.readyState){s.onreadystatechange=callback}d.body.appendChild(s)}else{callback()}}(document))">Oh Behave! (2)</a> &larr; Drag this to your bookmarks
+			</p>
+		</section>
+	</div>
+</body>
+</html>
