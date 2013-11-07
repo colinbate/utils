@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Resizer</title>
+	<link href='../style/core.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="main">
+		<header>
+			<h1 class="container">Text Resizer</h1>
+		</header>
+		<section class="container">
+			<p>These bookmarklets simply increase or decrease the size of the text in the textarea or input you are currently focused on.</p>
+
+			<h2>Increase Text Size</h2>
+			<p>
+				<a class="button" href="javascript:(function(d,s,p){s=window.getComputedStyle(d.activeElement, null).getPropertyValue('font-size');p=parseFloat(s);d.activeElement.style.fontSize=(p+1)+'px';}(document))">+ Text Size</a> &larr; Drag this to your bookmarks
+			</p>
+
+			<h2>Decrease Text Size</h2>
+			<p>
+				<a class="button" href="javascript:(function(d,s,p){s=window.getComputedStyle(d.activeElement, null).getPropertyValue('font-size');p=parseFloat(s);d.activeElement.style.fontSize=(p-1)+'px';}(document))">- Text Size</a> &larr; Drag this to your bookmarks
+			</p>
+		</section>
+	</div>
+</body>
+</html>
