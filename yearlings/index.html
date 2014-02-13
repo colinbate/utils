@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yearlings</title>
+    <link rel="stylesheet" href="css/core.css">
+  </head>
+  <body ng-controller="YearlingsController">
+    <div class="container">
+      <h1>Yearlings</h1>
+      <div class="yearlings">
+        <div class="load" ng-hide="player.maxHitPoints"><img src="img/load.gif"></div>
+        <div class="stats ng-cloak" ng-show="showStats()">
+          <dl>
+            <dt>Money</dt>
+            <dd>{{player.money}}</dd>
+            <dt>Health</dt>
+            <dd>{{player.hitPoints}} / {{player.maxHitPoints}}</dd>
+            <dt>Total Attack</dt>
+            <dd>{{player.attack + player.weapon.strength}}</dd>
+            <dt>Total Defence</dt>
+            <dd>{{player.defence + player.armor.strength}}</dd>
+            <dt>Exerience Points</dt>
+            <dd>{{player.experience}}</dd>
+            <dt>Level</dt>
+            <dd>{{player.level}}</dd>
+            <dt>Cure Potions</dt>
+            <dd>{{player.items.cure}}</dd>
+            <dt>Bombs</dt>
+            <dd>{{player.items.bombs}}</dd>
+            <dt>Weapon</dt>
+            <dd>{{player.weapon.name || '(none)'}}</dd>
+            <dt>Armour</dt>
+            <dd>{{player.armor.name || '(none)'}}</dd>
+          </dl>
+        </div>
+        <div class="load-game">
+          <button ng-click="loadDialog()">Load a saved game</button>
+        </div>
+        <div class="location ng-cloak" ng-hide="inBattle()">
+          <h2>{{getCurrentLocationTitle()}}</h2>
+          <p class="main">{{getCurrentLocationDesc()}}</p>
+          <ul>
+            <li ng-repeat="action in currentLocation.actions"><button ng-click="takeAction(action)">{{getActionLabel(action)}}</button></li>
+          </ul>
+        </div>
+        <div class="battle ng-cloak" ng-show="inBattle()">
+          <h2>Fighting {{currentBattle.name}}</h2>
+          <p class="main">{{currentBattle.desc}}</p>
+          <p ng-hide="currentBattle.hitPoints===0">{{currentBattle.name}}'s health: {{currentBattle.hitPoints}} / {{currentBattle.maxHitPoints}}</p>
+          <ul>
+            <li ng-repeat="action in currentBattle.actions"><button ng-click="battleAction(action)">{{getActionLabel(action)}}</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script type="text/ng-template" id="saveScreen.html">
+      <div class="save-screen">
+        <h3>{{loadTitle}}</h3>
+        <input type="text" ng-model="$parent.saveName" ng-show="saving" placeholder="Optional label for save...">
+        <div class="saved-game" ng-repeat="game in savedGames track by $index" ng-click="clickSlot($index + 1)">
+          <span class="name">{{game.name}}</span>
+          <span class="desc">{{game.desc}}</span>
+        </div>
+      </div>
+    </script>
+    <script src="libs/require.js" data-main="js/main"></script>
+  </body>
+</html>
