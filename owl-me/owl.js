@@ -1,6 +1,6 @@
 (function ($, w) {
-  var rest = 'url(http://colinbate.bitbucket.org/owl-me/owl.png)',
-      fly = 'url(http://colinbate.bitbucket.org/owl-me/owl-flap.png)',
+  var rest = 'url(https://colinbate.bitbucket.io/owl-me/owl.png)',
+      fly = 'url(https://colinbate.bitbucket.io/owl-me/owl-flap.png)',
       $w = $(window),
       flap = function ($t) {
         return setInterval(function () {
