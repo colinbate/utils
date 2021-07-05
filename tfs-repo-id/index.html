@@ -11,13 +11,16 @@
 		</header>
 		<section class="container">
 			<p>These bookmarklets will simply alert the ID of the TFS Git repository whose page you are on.</p>
-      <p>The second one works with on premise Azure DevOps 2019, whereas the first works with on premise TFS 2018</p>
+      <p>The second one works with on premise Azure DevOps 2019, whereas the first works with on premise TFS 2018. The last one should work with 2019 and beyond, but has only been tested on 2020.</p>
       
 			<p>
 				<a class="button" href="javascript:(function(){alert((/\u0022defaultRepoId\u0022:\u0022([0-9a-fA-F-]+)\u0022/.exec((document.querySelector('.vss-web-page-data')||{}).text)||[])[1]||'No ID Found')}())">Find TFS Repo ID</a> &larr; Drag this to your bookmarks
 			</p>
 			<p>
-				<a class="button" href="javascript:(function(){alert((/\u0022defaultRepoId\u0022:\u0022([0-9a-fA-F-]+)\u0022/.exec((document.querySelector('#dataProviders')||{}).text)||[])[1]||'No ID Found')}())">Find Azure DevOps Repo ID</a> &larr; Drag this to your bookmarks
+				<a class="button" href="javascript:(function(){alert((/\u0022defaultRepoId\u0022:\u0022([0-9a-fA-F-]+)\u0022/.exec((document.querySelector('#dataProviders')||{}).text)||[])[1]||'No ID Found')}())">Find Azure DevOps 2019 Repo ID</a> &larr; Drag this to your bookmarks
+			</p>
+			<p>
+				<a class="button" href="javascript:(function(a){a=window.location.origin+window.location.pathname;fetch(a.replace(/_git\/.*/,'_apis/git/Repositories')).then(r=>r.json()).then(d=>prompt('ID',d.value.find(r=>r.remoteUrl===a).id))}())">Find Azure DevOps 2020 Repo ID</a> &larr; Drag this to your bookmarks
 			</p>
 		</section>
 	</div>
